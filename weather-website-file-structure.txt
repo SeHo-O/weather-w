@@ -1,0 +1,17 @@
+weather-website
+├── .DS_Store
+├── LICENSE
+├── README.md
+├── about.html
+├── city.list.json
+├── contact.html
+├── css
+│   └── styles.css
+├── faq.html
+├── index.html
+├── js
+│   ├── app.js
+│   ├── contact.js
+│   └── navbar.js
+├── navbar.html
+└── resources.html

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/navbar.js"></script>
+    </style>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <div class="container mt-3" id="searchbar">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 w-100" type="search" placeholder="Search" aria-label="Search" id="city-input">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+      <div class="mt-4">
+            <h2>UNITS</h2>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="units" id="fahrenheit" value="imperial">
+                <label class="form-check-label" for="fahrenheit">Fahrenheit</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="units" id="celsius" value="metric" checked>
+                <label class="form-check-label" for="celsius">Celsius</label>
+            </div>
+        </div>
+        <div id="weather-info">
+            <span id="city"></span>
+            <span id="temp"></span>
+            <p id="description"></p>
+        </div>
+        <div class="mt-4" id="hourly-forecast">
+            <div class="row" id="hourly-forecast-container"></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-9 col-md-8">
+                <h2>6-DAY FORECAST</h2>
+                <table class="table mt-3" id="daily-forecast-table">
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div id="weather-details" class="d-flex flex-column">
+                    <div id="air-quality-info" class="weather-widget">
+                        <h2>AIR QUALITY</h2>
+                        <p><span id="aqi-name"></span></p>
+                        <div id="aqi-bar-container">
+                            <div id="aqi-bar"></div>
+                            <div id="aqi-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div id="feels-like-info" class="weather-widget">
+                                <h2>FEELS LIKE</h2>
+                                <div id="feels-like-content">
+                                    <p><span id="feels-like-temp"></span></p>
+                                    <p id="feels-like-description"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div id="rain-forecast-info" class="weather-widget">
+                                <h2>RAIN FORECAST</h2>
+                                <div id="rain-forecast-content">
+                                    <p id="next-rain-time"></p>
+                                    <p id="rain-intensity"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+    </div>
+    <script>
+        let cityData;
+        $.getJSON('city.list.json', function(data) {
+            cityData = data;
+        });
+    </script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1F1C23;
+}
+
+.container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: white;
+}
+
+h2 {
+    font-size: smaller;
+    color: white;
+}
+
+#hourly-forecast,
+#weather-info,
+#air-quality-info,
+#feels-like-info,
+#rain-forecast-info {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 400;
+    overflow-x: auto;
+    
+}
+
+#weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #29232F;
+    color: white;
+}
+
+#weather-info #temp {
+    font-size: 3rem;
+    color: white;
+}
+
+#weather-info #city {
+    font-size: 1.5rem;
+
+}
+
+#search-form {
+    margin-bottom: 20px;
+    
+}
+
+#forecast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#forecast-table th,
+#forecast-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.form-check-inline {
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+#hourly-forecast-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    gap: 10px;
+}
+
+.forecast-card {
+    flex: 0 0 auto;
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(64, 128, 128, 0.7);
+    border-radius: 5px;
+}
+
+.forecast-card:first-child {
+    font-weight: bold;
+}
+
+.weather-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.hour {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.temperature {
+    margin-top: 5px;
+}
+
+#daily-forecast-table {
+    display: table;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#daily-forecast-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#daily-forecast-table td:nth-child(4) {
+    width: 40%;
+}
+
+.temp-range-bar {
+    position: relative;
+    height: 20px;
+    background-color: #dedede;
+    border-radius: 5px;
+    margin: 5px auto;
+    overflow: hidden;
+}
+
+.daily-range-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(to right, blue, red);
+    border-radius: 5px;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.form-inline {
+    margin-left: 1rem;
+}
+
+@media (max-width: 950px) {
+    .navbar-nav {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    .navbar-brand {
+        margin-right: auto;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
+    #nav_searchbar {
+        display: none;
+    }
+
+    #air-quality-info {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 950px) {
+    #searchbar {
+        display: none;
+    }
+}
+
+#air-quality-info,
+#feels-like-info,
+#rain-forecast-info {
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#feels-like-content,
+#rain-forecast-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#feels-like-temp,
+#next-rain-time {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#feels-like-description,
+#rain-intensity {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+#aqi-bar-container {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, lightblue, green, yellow, orange, red, darkred);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#aqi-bar {
+    width: 100%;
+    height: 100%;
+}
+
+#aqi-indicator {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#aqi-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.forecast-card.sunrise,
+.forecast-card.sunset {
+    border: 1px solid #ffd7b5;
+}
+
+.sun-icon {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+#weather-details .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#weather-details .col-6 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
